@@ -23,7 +23,7 @@ public class TitlesController {
         return title.map(t -> ResponseEntity.ok().body(t)).orElse(NOT_FOUND);
     }
 
-    @PatchMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Title> updateTitle(@PathVariable long id, @Valid @RequestBody Title title) {
         Title result = titleRepository.save(title);
         return ResponseEntity.ok().body(result);
