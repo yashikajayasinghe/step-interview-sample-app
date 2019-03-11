@@ -1,4 +1,4 @@
-# step-technical-competency-test
+# Sample App for STEP Technical Interviews
 
 This application is comprised of a Java / Spring Boot API (using a file-based H2 database), and a React front-end (found in /web).
 
@@ -18,6 +18,6 @@ The Java API has no external dependencies. It can be run from inside an IDE such
 
 ### Running the Web Front-end
 
-The React front-end javascript code is in the `web` folder of this repo. `cd` into this folder and run `npm install` to install required libraries.
+The React front-end is in the `web` folder of this repo. `cd` into this folder and run `npm install` to install required libraries.
 
-Start the web client using `npm start`. It will automatically pick up and changes that are made while it's running.
+Start the web client using `npm start`. It will automatically pick up any changes that are made while it's running.
