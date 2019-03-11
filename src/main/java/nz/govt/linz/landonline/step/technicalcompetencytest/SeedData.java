@@ -16,8 +16,8 @@ class SeedData implements CommandLineRunner {
     public void run(String... strings) {
         // Create the seed titles if the database is empty
         if(titleRepository.count() == 0) {
-            titleRepository.save(new Title("Lot 1 on Deposited Plan 12345", "Jane Doe"));
-            titleRepository.save(new Title("Lot 2 on Deposited Plan 12345", "Bob Smith"));
+            titleRepository.save(new Title("Lot 1 on Block 1", "Jane Doe"));
+            titleRepository.save(new Title("Lot 2 on Block 1", "Bob Smith"));
         }
 
         // Print a list of titles in the database
