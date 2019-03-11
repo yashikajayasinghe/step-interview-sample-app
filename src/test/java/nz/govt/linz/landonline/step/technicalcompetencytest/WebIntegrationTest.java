@@ -45,9 +45,9 @@ public class WebIntegrationTest {
 
         JSONAssert.assertEquals("{id:1,ownerName:'Brian Davies'}", response.getBody(), false);
 
-        // Check that a fetch returns the updated owner name
+        // Check that a fetch returns the updated owner name, and the original description
         response = get("/api/titles/1");
-        JSONAssert.assertEquals("{id:1,ownerName:'Brian Davies'}", response.getBody(), false);
+        JSONAssert.assertEquals("{id:1,ownerName:'Brian Davies',description:'Lot 1 on Deposited Plan 12345'}", response.getBody(), false);
     }
 
     private ResponseEntity<String> get(String url) {

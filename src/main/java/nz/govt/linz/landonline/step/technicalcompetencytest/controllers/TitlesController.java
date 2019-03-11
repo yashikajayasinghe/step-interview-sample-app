@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -24,8 +25,10 @@ public class TitlesController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Title> updateTitle(@PathVariable long id, @Valid @RequestBody Title title) {
-        Title result = titleRepository.save(title);
+    public ResponseEntity<Title> updateTitle(@PathVariable long id, @RequestBody Title body) {
+        Title result = titleRepository.findById(id).get();
+        result.setOwnerName(body.getOwnerName());
+        titleRepository.save(result);
         return ResponseEntity.ok().body(result);
     }
 }
