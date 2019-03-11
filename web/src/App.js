@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
 import TitleSearch from "./components/TitleSearch";
 import TitlePage from "./components/TitlePage";
+import { relative } from "path";
 
 class App extends Component {
   constructor(props) {
@@ -15,12 +16,8 @@ class App extends Component {
     return (
       <Router>
         <div style={{margin: "15px"}}>
-          <TitleSearch />
-            
-          <hr />
-  
           <Route exact path="/" component={Home} />
-          <Route path="/titles/:titleNo" component={TitlePage} />
+          <Route path="/titles/:titleNo" component={TitlePageWrapper} />
         </div>
       </Router>
     );
@@ -29,8 +26,25 @@ class App extends Component {
 
 function Home() {
   return (
+    <div style={{position: "relative"}}>
+      <div style={{position: "fixed", top: "40%", left: "50%", transform: "translate(-50%, -50%)", border: "1px solid #dee2e6", padding: "50px"}}>
+        <h3>Welcome to LandOnLite</h3>
+        <p>You can enter a title number (e.g. "1") to view it.</p>
+        <TitleSearch />
+      </div>
+    </div>
+  );
+}
+
+function TitlePageWrapper() {
+  return (
     <div>
-      <h2>Home</h2>
+      <div>
+        <Link style={{marginRight: "10px"}} to="/">&lt; Home</Link>
+        <TitleSearch />
+      </div>
+      <hr />
+      <TitlePage />
     </div>
   );
 }

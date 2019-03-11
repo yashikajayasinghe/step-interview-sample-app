@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom"
+import { Table } from "reactstrap";
+
 class TitlePage extends Component {
     constructor(props) {
       super(props);
@@ -37,7 +40,7 @@ class TitlePage extends Component {
             Loading...
           </p>}
           {this.state.data && <div>
-            <table>
+            <Table>
                 <tbody>
                     <tr>
                         <th>Description</th>
@@ -48,11 +51,11 @@ class TitlePage extends Component {
                         <td>{title.ownerName}</td>
                     </tr>
                 </tbody>
-            </table>
+            </Table>
           </div>}
         </div>
       );
     }
 }
 
-export default TitlePage;
+export default withRouter(TitlePage);

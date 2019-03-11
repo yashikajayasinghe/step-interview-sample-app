@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import withRouter from "react-router-dom/withRouter";
+import { Form, Label, Input, Button } from "reactstrap";
 
 class TitleSearch extends Component {
     constructor(props) {
@@ -18,14 +19,12 @@ class TitleSearch extends Component {
     }
     render() {
       return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-                Title Number:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+        <div style={{display: "inline-block"}}>
+          <Form inline onSubmit={this.handleSubmit}>
+            <Input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Enter a title number" />
+            &nbsp;
+            <Button color="primary" type="submit" value="Submit">Submit</Button>
+          </Form>
         </div>
       );
     }
