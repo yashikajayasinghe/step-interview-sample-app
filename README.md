@@ -11,8 +11,13 @@ of a title, though only conveyancing lawyers should.
 
 ## Running the application
 
-The application has no external dependencies. It can be run from inside an IDE such as IntelliJ IDEA, or from the command line with 
+### Running the API
+
+The Java API has no external dependencies. It can be run from inside an IDE such as IntelliJ IDEA, or from the command line with 
 `gradlew bootRun`.
 
-The React front-end can be run from the command line with `npm start`, once the dependencies are installed. It will automatically 
-pick up and changes that are made while it's running.
+### Running the Web Front-end
+
+The React front-end javascript code is in the `web` folder of this repo. `cd` into this folder and run `npm install` to install required libraries.
+
+Start the web client using `npm start`. It will automatically pick up and changes that are made while it's running.
