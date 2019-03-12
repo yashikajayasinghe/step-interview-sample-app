@@ -1,4 +1,4 @@
-package nz.govt.linz.landonline.step.technicalcompetencytest;
+package nz.govt.linz.landonline.step.landonlite;
 
 import org.json.JSONException;
 import org.junit.Test;
@@ -13,13 +13,12 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
 import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = TechnicalCompetencyTestApplication.class,
+@SpringBootTest(classes = LandOnLiteApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class WebIntegrationTest {
 

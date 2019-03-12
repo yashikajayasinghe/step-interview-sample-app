@@ -1,7 +1,7 @@
-package nz.govt.linz.landonline.step.technicalcompetencytest;
+package nz.govt.linz.landonline.step.landonlite;
 
-import nz.govt.linz.landonline.step.technicalcompetencytest.models.Title;
-import nz.govt.linz.landonline.step.technicalcompetencytest.repositories.TitleRepository;
+import nz.govt.linz.landonline.step.landonlite.models.Title;
+import nz.govt.linz.landonline.step.landonlite.repositories.TitleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
