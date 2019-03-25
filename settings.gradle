@@ -3,4 +3,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'technical-competency-test'
+rootProject.name = 'step-interview-sample-app'
