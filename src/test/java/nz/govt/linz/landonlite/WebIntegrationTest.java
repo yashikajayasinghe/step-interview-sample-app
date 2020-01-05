@@ -1,4 +1,4 @@
-package nz.govt.linz.landonline.step.landonlite;
+package nz.govt.linz.landonlite;
 
 import org.json.JSONException;
 import org.junit.Test;

@@ -1,7 +1,7 @@
-package nz.govt.linz.landonline.step.landonlite.controllers;
+package nz.govt.linz.landonlite.controllers;
 
-import nz.govt.linz.landonline.step.landonlite.models.Title;
-import nz.govt.linz.landonline.step.landonlite.repositories.TitleRepository;
+import nz.govt.linz.landonlite.models.Title;
+import nz.govt.linz.landonlite.repositories.TitleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

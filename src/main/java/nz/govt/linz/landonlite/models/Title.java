@@ -1,4 +1,4 @@
-package nz.govt.linz.landonline.step.landonlite.models;
+package nz.govt.linz.landonlite.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
