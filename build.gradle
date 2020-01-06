@@ -1,11 +1,34 @@
-plugins {
-    id 'se.patrikerdes.use-latest-versions' version '0.2.13'
-    id 'com.github.ben-manes.versions' version '0.27.0'
-    id 'org.springframework.boot' version '2.2.2.RELEASE'
-    id 'java'
+buildscript {
+    ext {
+        kotlinVersion = '1.3.61'
+        springBootVersion = '2.2.2.RELEASE'
+    }
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath("se.patrikerdes:gradle-use-latest-versions-plugin:0.2.13")
+        classpath('com.github.ben-manes:gradle-versions-plugin:0.27.0')
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+//        classpath("io.ebean:ebean-gradle-plugin:11.36.1")
+    }
 }
 
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'se.patrikerdes.use-latest-versions'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'io.ebean'
+apply plugin: 'org.jetbrains.kotlin.jvm'
 
 group = 'nz.govt.linz'
 version = '0.0.1-SNAPSHOT'
@@ -18,7 +41,25 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+springBoot {
+    mainClassName = 'nz.govt.linz.landonlite.LandOnLiteApplicationKt'
 }
