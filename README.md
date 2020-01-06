@@ -26,7 +26,10 @@ Start the web front-end using `npm start`. It will automatically pick up any cha
 
 ### Accessing the Application and Database
 
-Once the API and Front-end are running, point your browser to http://localhost:3000/
+Once the API and Front-end are running, point your browser to http://localhost:3000/ and the LandOnLite application
+should appear
+
+![LandOnLite](landonlite.png)
 
 To access the H2 database console, go to http://localhost:8080/h2-console and use the credentials shown below:
 
