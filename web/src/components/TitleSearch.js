@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import withRouter from "react-router-dom/withRouter";
-import { Form, Label, Input, Button } from "reactstrap";
+import { Form, Input, Button } from "reactstrap";
 
 class TitleSearch extends Component {
     constructor(props) {

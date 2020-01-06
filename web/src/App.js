@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TitleSearch from "./components/TitleSearch";
 import TitlePage from "./components/TitlePage";
-import { relative } from "path";
 
 class App extends Component {
   constructor(props) {

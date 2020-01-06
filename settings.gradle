@@ -3,4 +3,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'step-interview-sample-app'
+rootProject.name = 'landonlite'
