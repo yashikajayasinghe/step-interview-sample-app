@@ -2,6 +2,7 @@ buildscript {
     ext {
         kotlinVersion = '1.3.61'
         springBootVersion = '2.2.2.RELEASE'
+        ebeanVersion = '12.1.8'
     }
     repositories {
         maven {
@@ -16,7 +17,7 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
-//        classpath("io.ebean:ebean-gradle-plugin:11.36.1")
+        classpath("io.ebean:ebean-gradle-plugin:${ebeanVersion}")
     }
 }
 
@@ -27,7 +28,7 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-//apply plugin: 'io.ebean'
+apply plugin: 'io.ebean'
 apply plugin: 'org.jetbrains.kotlin.jvm'
 
 group = 'nz.govt.linz'
@@ -39,13 +40,17 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile('javax.xml.bind:jaxb-api:2.4.0-b180830.0359')
+    compile('javax.activation:activation:1.1.1')
+    compile('org.glassfish.jaxb:jaxb-runtime:2.4.0-b180830.0438')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
+    implementation "io.ebean:ebean:${ebeanVersion}"
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "io.ebean.test:ebean-test-config:11.41.2"
 }
 
 compileKotlin {
@@ -58,6 +63,10 @@ compileTestKotlin {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+ebean {
+    debugLevel = 1
 }
 
 springBoot {
