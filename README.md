@@ -1,6 +1,7 @@
 # Sample App for STEP Technical Interviews
 
-This application is comprised of a Kotlin / Spring Boot API which uses an in-memory H2 database (via the EBean ORM). It has a React front-end which can be found in the `web` folder of this repo.
+This application is comprised of a Kotlin / Spring Boot API which uses an in-memory H2 database via the
+EBean ORM. It has a React JS front-end which can be found in the `web` folder of this repo.
 
 It implements a primitive title register called "LandOnLite". There is a single database table called "title", which
 records titles. Like a real title, these titles give people ownership rights to some land. A title in LandOnLite has a
@@ -13,7 +14,7 @@ change the ownership of a title, though only conveyancing lawyers should.
 
 ### Running the API
 
-The Java API has no external dependencies. It can be run from inside an IDE such as IntelliJ IDEA, or from the command
+The API has no external dependencies. It can be run from inside an IDE such as IntelliJ IDEA, or from the command
 line with `gradlew bootRun`.
 
 ### Running the Web Front-end
