@@ -16,10 +16,6 @@ class Title (
     val id: Long = 0
 
     override fun toString(): String {
-        return "Title{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", ownerName='" + ownerName + '\'' +
-                '}'
+        return "Title(description='$description', ownerName='$ownerName', id=$id)"
     }
 }
