@@ -43,7 +43,7 @@ API.
 # UI/UX focused interview
 
 Think about mocking out a few user experiences. Some ideas that we will use as a launching board for discussion: 
-1. How a use might navigate between other LINZ applications. There are other applications that we would like to have the same UX and UI experience. These apps are Survey, Title management as well as Search application which brings them together. 
+1. Think aboout how users might navigate between other LINZ applications. We would like to have the same UX and UI across apps. These apps are Survey, Title management, and a Title/Survey Search application. 
 2. Customer detail management. Customers belong to on or more legal or survey firms. They swap between them daily. How might they know what firm they are logged into as?
 3. How might we share a common UI and UX across multiple web applications built by separate, but collaborative teams?
 
