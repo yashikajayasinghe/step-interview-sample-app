@@ -40,7 +40,14 @@ To access the H2 database console, go to http://localhost:8080/h2-console and us
 Bare in mind this is an _in-memory_ database so any manual data or schema changes will be lost when you restart the
 API.
 
-# step-devops-interview
+# UI/UX focused interview
+
+Think about mocking out a few user experiences. Some ideas that we will use as a launching board for discussion: 
+1. How a use might navigate between other LINZ applications. There are other applications that we would like to have the same UX and UI experience. These apps are Survey, Title management as well as Search application which brings them together. 
+2. Customer detail management. Customers belong to on or more legal or survey firms. They swap between them daily. How might they know what firm they are logged into as?
+3. How might we share a common UI and UX across multiple web applications built by separate, but collaborative teams?
+
+# Devops focused interview
 
 Contains the scripts for DevOps Technical Interview
 
