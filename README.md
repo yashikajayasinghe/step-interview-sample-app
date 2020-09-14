@@ -46,6 +46,12 @@ Think about mocking out a few user experiences. Some ideas that we will use as a
 1. Think aboout how users might navigate between other LINZ applications. We would like to have the same UX and UI across apps. These apps are Survey, Title management, and a Title/Survey Search application. 
 2. Customer detail management. Customers belong to on or more legal or survey firms. They swap between them daily. How might they know what firm they are logged into as?
 3. How might we share a common UI and UX across multiple web applications built by separate, but collaborative teams?
+4. Can you tell us about a time you've implemented a responsive layout for a complex page? How did they manage tables/data rows/show n hide
+5. How do you handle CSS specificity? :: Do they set global styles as well as narrow focused ones? 
+6. Tell us about the various ways you've animated components in the UI? :: CSS vs JS 
+7. Have you had experience around implementing accessibility? :: Do they know about ARIA, Web Standards AA, do they know where to look for it? And test? Do they have the mindset of 'bake it in from the start'
+8. Is there a way of selecting all P tags that don't have a certain attribute assigned to it? How flexible are these selectors? :: Knowledge depth test around attribute selectors
+9. How can you ensure the CSS you're using is suppported in all browsers :: 'can I use' .com site for referencing such things
 
 # Devops focused interview
 
