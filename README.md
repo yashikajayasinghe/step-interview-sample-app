@@ -48,7 +48,7 @@ We are going to ask you to modify the application so that when someone changes t
 
 # UI/UX focused interview
 
-Mocking out a few user experiences from the  conversatino list below. Feel free to do in in code (React) or what ever tool you use: 
+Mocking out a few user experiences from the  conversation list below. Feel free to do in in code (React) or what ever tool you use: 
 1. Think aboout how users might navigate between other LINZ applications. We would like to have the same UX and UI across apps. These apps are Survey, Title management, and a Title/Survey Search application. 
 2. Customer detail management. Customers belong to on or more legal or survey firms. They swap between them daily. How might they know what firm they are logged into as?
 3. How might we share a common UI and UX across multiple web applications built by separate, but collaborative teams?
