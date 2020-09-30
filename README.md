@@ -12,6 +12,8 @@ change the ownership of a title, though only conveyancing lawyers should.
 
 You are more than welcome to prepare a solution to the problem statement before the interview - we'll ask you to extend it with pseudo code if you do.
 
+Below are instructions on how to run the application, and below that are instructions on what we will talk about in the interview. There are instructions that depend on your area of skill and the role you are applying for. Feel free to look at the other instructions if that would also show of your strengths.
+
 ## Running the application
 
 ### Running the API
@@ -40,9 +42,13 @@ To access the H2 database console, go to http://localhost:8080/h2-console and us
 Bare in mind this is an _in-memory_ database so any manual data or schema changes will be lost when you restart the
 API.
 
+# Application developer interview
+
+We are going to ask you to modify the application so that when someone changes the owner name on a title, it is tracked so that anybody can see the history of owner names when they look at the title.
+
 # UI/UX focused interview
 
-Think about mocking out a few user experiences. Some ideas that we will use as a launching board for discussion: 
+Mocking out a few user experiences from the  conversatino list below. Feel free to do in in code (React) or what ever tool you use: 
 1. Think aboout how users might navigate between other LINZ applications. We would like to have the same UX and UI across apps. These apps are Survey, Title management, and a Title/Survey Search application. 
 2. Customer detail management. Customers belong to on or more legal or survey firms. They swap between them daily. How might they know what firm they are logged into as?
 3. How might we share a common UI and UX across multiple web applications built by separate, but collaborative teams?
