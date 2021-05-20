@@ -59,7 +59,7 @@ Mocking out a few user experiences from the  conversation list below. Feel free 
 8. Is there a way of selecting all P tags that don't have a certain attribute assigned to it? How flexible are these selectors? 
 9. How can you ensure the CSS you're using is suppported in all browsers that are in scope
 
-# step-devops-interview
+# DevOps Engineer interview
 Contains the scripts for DevOps Technical Interview
 
 1. We have an application (frontend – ReactJS, backend that exposes api that retrieves data from database – Kotlin) and we are building it as a Docker image. 
