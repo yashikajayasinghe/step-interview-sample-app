@@ -62,8 +62,24 @@ This is some code used for encrypting a cookie that is set for the user. No encr
 
 ## Sample 3 - Database Operation
 
-Here is some code that updates a title record in the database.
+Here is some code that retrieves contact details from the database. What might be wrong with this code, and in what scenarios can that issue, if it exists, be exploited?
 
 ```kotlin
+@Repository
+class ContactDetailRepository(@Informix db: Database) : DtoRepository<ContactDetail>(ContactDetail::class.java, db) {
 
+    /**
+     * Get the contact details for a user using the cf_cde_s15_getusercontactdetails function
+     */
+    fun getUserContactDetails(userId: String, firmId: String?): ContactDetail {
+        val sql = """
+            execute function cf_cde_s15_getusercontactdetails(as_user_id= $userId,
+            as_firm_id = $firmId, avc_delivery_method = :deliveryMethod)
+        """.trimIndent()
+        return find(sql)
+            .setParameter("deliveryMethod", "EMAL")
+            .findOne()!!
+    }
+
+}
 ```
