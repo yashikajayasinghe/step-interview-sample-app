@@ -118,3 +118,24 @@ class ContactDetailRepository(@Informix db: Database) : DtoRepository<ContactDet
 
 }
 ```
+
+## Sample 4 - Database Healthcheck
+
+This is some code used to verify that database network connectivity is functioning as expected. What issue can be seen in the below code, and how would it possibly be exploited? What sort of mitigations or, if necessary, checks or modifications to the below code, would you suggest?
+
+```kotlin
+/**
+ * Log the count and details of any connections to the Landonline database
+ */
+private fun checkConnections(port String) {
+    val os_name: String = System.getProperty("os.name")
+    val connectionDetails = if (os_name.contains("Windows"))
+        execute("cmd", "/c", "netstat -n | findstr :$port").trim() else
+        execute("sh", "-c", "netstat -n | grep :$port").trim()
+    val numConnections = if (connectionDetails.isBlank()) 0 else connectionDetails.lines().size
+    logger.trace("Connections: $numConnections")
+    if (numConnections > 0) {
+        logger.trace("\n  $connectionDetails")
+    }
+}
+```
