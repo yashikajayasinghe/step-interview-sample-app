@@ -52,12 +52,47 @@ fun login(
 }
 ```
 
-## Sample 2 - Encryption
+## Sample 2 - Logging
 
-This is some code used for encrypting a cookie that is set for the user. No encryption algorithms are hand-written - this all uses code from the Spring framework.
+This code is invoked when a login is successful. What concerns from a security perspective exist? And how can these be mitigated?
 
 ```kotlin
+fun createSession(
+    userId: String,
+    passwordChangeRequired: Boolean,
+    response: HttpServletResponse,
+    isSecure: Boolean
+) {
+    eventHubManager.logToEventHub(log, Level.INFO, "creating session for user "+userId)
+    log.info("creating session for user "+userId)
 
+    val requiredActions = mutableListOf<AuthAction>()
+    if (passwordChangeRequired) requiredActions.add(AuthAction.CHANGE_PASSWORD)
+
+    val dbUser = userRepository.getUserInfo(userId)
+    eventHubManager.logToEventHub(log, Level.INFO, "user info: "+dbUser.asString())
+    log.info("user info: "+dbUser.asString())
+
+    val session = AuthSession(
+        userId = userId,
+        requiredActions = requiredActions,
+        firms = dbUser.associatedFirmRelationships.map { it ->
+            SessionFirm(
+                id = it.firm.id,
+                name = it.firm.corporateName,
+                privileges = userRepository.getFirmUserPrivileges(it)
+                    .map { privilege -> privilege.toString().toUpperCase() },
+            )
+        },
+        categories = dbUser.roles
+    )
+    val sessionId = sessionService.saveSession(session = session)
+    
+    eventHubManager.logToEventHub(log, Level.INFO, "auth session: "+sessionId+":"+session.asString())
+    log.info("auth session: "+sessionId+":"+session.asString())
+
+    setSessionCookie(response, sessionId, isSecure)
+}
 ```
 
 ## Sample 3 - Database Operation
