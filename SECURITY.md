@@ -1,10 +1,10 @@
-# Security / SecOps focused interview
+# Security / AppSec focused interview
 
-For a security-focused interview, please examine the code samples below and opine on whatever flaws they may or may not have from a security point of view.
+For a security-focused interview, please examine the code samples below and comment on whatever flaws they may or may not have from a security point-of-view.
 
 ## Sample 1 - Auth
 
-This api method is used when logging in. What potential issues can be seen with this code?
+This api method is used when logging in. What potential issues can be seen within this code?
 
 ```kotlin
 @PostMapping("/auth/api/login", produces = ["application/json"])
@@ -54,7 +54,7 @@ fun login(
 
 ## Sample 2 - Logging
 
-This code is invoked when a login is successful. What concerns from a security perspective exist? And how can these be mitigated?
+This code is invoked when a login is successful. What concerns from a security perspective exist? And how might these be mitigated?
 
 ```kotlin
 fun createSession(
@@ -97,7 +97,7 @@ fun createSession(
 
 ## Sample 3 - Database Operation
 
-Here is some code that retrieves contact details from the database. What might be wrong with this code, and in what scenarios can that issue, if it exists, be exploited?
+Here is some code that retrieves contact details from the database. What might be wrong with this code, and in what scenarios can these issues be exploited?
 
 ```kotlin
 @Repository
@@ -121,7 +121,7 @@ class ContactDetailRepository(@Informix db: Database) : DtoRepository<ContactDet
 
 ## Sample 4 - Database Healthcheck
 
-This is some code used to verify that database network connectivity is functioning as expected. What issue can be seen in the below code, and how would it possibly be exploited? What sort of mitigations or, if necessary, checks or modifications to the below code, would you suggest?
+This is some code used to verify that database network connectivity is functioning as expected. What issue can be seen in the below code, and how would it possibly be exploited? What sort of mitigations would you suggest?
 
 ```kotlin
 /**
