@@ -18,3 +18,5 @@ logging:
   level:
     io.ebean.SQL: DEBUG
     io.ebean.TXN: DEBUG
+server:
+  port: 8081
