@@ -35,7 +35,7 @@ should appear
 
 ![LandOnLite](landonlite.png)
 
-To access the H2 database console, go to http://localhost:8080/h2-console and use the credentials shown below:
+To access the H2 database console, go to http://localhost:8081/h2-console and use the credentials shown below:
 
 ![H2 Console Access](h2console.png)
 
